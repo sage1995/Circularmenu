@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetStart="@id/start"
+        motion:constraintSetEnd="@id/end"
+        motion:duration="500"
+        motion:motionInterpolator="overshoot"
+        motion:staggered="0.4">
+
+        <OnClick motion:targetId="@+id/imageButton" />
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+
+        <Constraint
+            android:id="@+id/background"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            motion:layout_constraintBottom_toBottomOf="@id/imageButton"
+            motion:layout_constraintEnd_toEndOf="@id/imageButton"
+            motion:layout_constraintStart_toStartOf="@id/imageButton"
+            motion:layout_constraintTop_toTopOf="@id/imageButton" />
+
+        <Constraint
+            android:id="@+id/button"
+            android:visibility="invisible"
+            motion:layout_constraintCircle="@id/background"
+            motion:layout_constraintCircleRadius="0dp"
+            motion:layout_constraintCircleAngle="270" />
+
+        <Constraint
+            android:id="@+id/button2"
+            android:visibility="invisible"
+            motion:layout_constraintCircle="@id/background"
+            motion:layout_constraintCircleRadius="0dp"
+            motion:layout_constraintCircleAngle="330" />
+
+        <Constraint
+            android:id="@+id/button3"
+            android:visibility="invisible"
+            motion:layout_constraintCircle="@id/background"
+            motion:layout_constraintCircleRadius="0dp"
+            motion:layout_constraintCircleAngle="300" />
+
+        <Constraint
+            android:id="@+id/button4"
+            android:visibility="invisible"
+            motion:layout_constraintCircle="@id/background"
+            motion:layout_constraintCircleRadius="0dp"
+            motion:layout_constraintCircleAngle="0" />
+
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+
+        <Constraint
+            android:id="@+id/imageButton"
+            android:rotation="215" />
+
+        <Constraint
+            android:id="@+id/background"
+            android:layout_width="500dp"
+            android:layout_height="500dp" />
+
+        <Constraint
+            android:id="@+id/button"
+            android:visibility="visible"
+            motion:layout_constraintCircleRadius="180dp" />
+
+        <Constraint
+            android:id="@+id/button2"
+            android:visibility="visible"
+            motion:layout_constraintCircleRadius="200dp" />
+
+        <Constraint
+            android:id="@+id/button3"
+            android:visibility="visible"
+            motion:layout_constraintCircleRadius="200dp" />
+
+        <Constraint
+            android:id="@+id/button4"
+            android:visibility="visible"
+            motion:layout_constraintCircleRadius="200dp" />
+
+    </ConstraintSet>
+
+</MotionScene>
